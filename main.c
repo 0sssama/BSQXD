@@ -43,7 +43,8 @@ int	main(void)
 		{'o', 'o'}
 	};
 	t_board input;
-	t_square *obstacles;
+	t_square 	*obstacles;
+	t_square	testing;
 
 	first_line[0] = '.';
 	first_line[1] = 'o';
@@ -58,10 +59,14 @@ int	main(void)
 	ft_print_board(input);
 	obstacles = ft_get_obstacles(input);
 	int	i = 0;
+	testing.x = 0;
+	testing.y = 0;
+	testing.l = 2;
 	while (i < input.obs_count)
 	{
 		printf("%d - %d\n", obstacles[i].x, obstacles[i].y);
 		i++;
 	}
 	printf("%d\n", input.obs_count);
+	printf("%s\n", ft_square_valid(testing, input)?"Square is valid!":"Square is invalid!");
 }

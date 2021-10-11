@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "global_vars.h"
+#include "functions.h"
 
 int	ft_square_valid(t_square square, t_board board)
 {
@@ -21,8 +22,8 @@ int	ft_square_valid(t_square square, t_board board)
 	i = 0;
 	while (obstacles[i].l != 0)
 	{
-		if ((obstacles[i].x >= square.x && obstacles[i].x <= square.x + square.l)
-			&& (obstacles[i].y >= square.y && obstacles[i].y <= square.y + square.l))
+		if ((obstacles[i].x >= square.x && obstacles[i].x <= square.x + square.l - 1)
+			&& (obstacles[i].y >= square.y && obstacles[i].y <= square.y + square.l - 1))
 			return (0);
 		i++;
 	}

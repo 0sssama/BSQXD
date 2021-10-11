@@ -10,7 +10,14 @@ typedef struct s_square {
     int l;
 } t_square;
 
-char board[N][N];
+typedef struct board {
+    int x;
+    int y;
+    int obs_count;
+    char board[N][N];
+
+} t_board;
+
 
 t_square current_square;
 

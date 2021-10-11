@@ -15,5 +15,4 @@ int ft_fill_example(void) {
         }
         i++;
     }
-
 }

@@ -3,6 +3,8 @@
 
 int main(void) {
     current_square.l = N;
+    current_square.x = 0;
+    current_square.y = 0;
 
     while(current_square.l > 0) {
         while(current_square.y + current_square.l <= N)

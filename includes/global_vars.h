@@ -1,8 +1,8 @@
 #ifndef GLOBAL_VARS_H
 # define GLOBAL_VARS_H
 
-#define X 27 
-#define Y 9
+# define X 27 
+# define Y 9
 
 typedef struct s_square {
     int x;

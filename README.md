@@ -7,3 +7,15 @@ TODO:
 	- a function to check if the map is valid
 	- a function to convert the string input to 2 dimensional array
 
+BUG TO FIX:
+    - Last line of the board is not checked properly.
+
+TODO:
+    - Check Makefile relink.
+    - Change putstr to puterr.
+
+NOTE:
+    - When reading from standard input:
+        1. When we use `cat file | ./bsq` it works
+        2. When we use `perl gen_map.pl 200 200 1 | ./bsq` we get `map error`
+

@@ -6,12 +6,13 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:36:47 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 22:49:42 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 21:28:26 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
+#include <stdio.h>
 
 int	ft_core(void)
 {

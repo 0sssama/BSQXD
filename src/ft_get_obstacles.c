@@ -26,7 +26,7 @@ t_square	*ft_get_obstacles()
 	output = (t_square *) malloc((g_board.obs_count + 1) * sizeof(t_square));
 	i = 0;
 	y = 1;
-	while (y <= g_board.y)
+	while (y < g_board.y)
 	{
 		x = 0;
 		while (x < g_board.x)

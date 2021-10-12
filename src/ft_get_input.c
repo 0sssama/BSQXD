@@ -12,17 +12,46 @@
 
 #include "functions.h"
 #include "global_vars.h"
-
+#include <stdio.h>
 char	**stdin_to_stdout(void)
 {
 	char	*buff;
 	char	**map;
+	int		ret;
 
-	buff = (char *)malloc(g_size * sizeof(char));
-	read(STDIN_FILENO, buff, g_size);
+	buff = (char *)malloc(1000001 * sizeof(char));
+    if (buff == 0)
+    {
+        return 0;
+    }
+	ret = read(STDIN_FILENO, buff, 1000000);
+    if (ret < 0)
+        return 0;
+    buff[ret] = '\0';
 	map = ft_split(buff, "\n");
 	return (map);
 }
+
+/*
+char **stdin_to_stdout(void)
+{	
+    char	**map;
+	char	*buff;
+	int		ret;
+	int		read_size;
+    
+    printf("stdin to stdout\n");
+	read_size = 0;
+	buff = (char *)malloc(g_size * sizeof(char));
+	if (buff == 0)
+		return (0);
+	while ((ret = read(0, buff, g_size)))
+		read_size += ret;
+	map = ft_split(buff, "\n");
+	free(buff);
+	return (map);
+}
+*/
 
 char	**read_input(char *input)
 {

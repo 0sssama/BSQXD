@@ -17,6 +17,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "global_vars.h"
+#include <stdio.h> // remove this later!
 
 
 t_square 	*ft_get_obstacles();

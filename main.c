@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:55:36 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 21:28:31 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 22:55:18 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	ft_reset_g_values(void)
 		free(g_obstacles);
 	if (g_board.bd)
 		free(g_board.bd);
+	g_board.x = 0;
+	g_board.y = 0;
+	g_board.obs_count = 0;
+	g_x = 0;
+	g_y = 0;
 }
 
 void	ft_init_g_values(char **map)
@@ -43,7 +48,7 @@ int	main(int ac, char **av)
 		{
 			g_size = 30000;
 			//ft_reset_g_values();
-			map = read_input(av[1]);
+			map = read_input(av[i]);
 			if (!map)
 			{
 				ft_putstr("map error.\n");
@@ -59,10 +64,8 @@ int	main(int ac, char **av)
 					ft_show_board();
 				}
 				else
-				{
 					ft_putstr("no valid square :( try another map!\n");
-					return (0);
-				}
+				ft_reset_g_values();
 			}
 			else
 				ft_putstr("map error.\n");
@@ -78,8 +81,13 @@ int	main(int ac, char **av)
 }
 
 /*
- * > get input			[X]
- * > map valid			[X]
- * > core				[ ]
- * > highlight square	[ ]
+ * > get input					[X]
+ * > map valid					[X]
+ * > core						[X]
+ * > highlight square			[X]
+
+
+
+ * > Standard input 			[ ]
+ * > Read from multiple files	[ ]
  */

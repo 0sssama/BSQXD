@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:55:36 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 22:55:18 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 23:02:03 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ int	main(int ac, char **av)
 
 
  * > Standard input 			[ ]
- * > Read from multiple files	[ ]
+ * > Read from multiple files	[X]
  */

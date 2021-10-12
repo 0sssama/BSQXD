@@ -1,8 +1,11 @@
 #ifndef GLOBAL_VARS_H
 # define GLOBAL_VARS_H
 
-# define X 27
-# define Y 9
+// it was X
+unsigned int	g_x;
+
+// it was Y
+unsigned int	g_y;
 
 typedef struct s_square {
     int x;
@@ -14,13 +17,12 @@ typedef struct s_board {
     int x;
     int y;
     int obs_count;
-    char bd[Y][X];
-
+    char **bd;
 } t_board;
 
-t_board board;
-t_square current_square;
-t_square *obstacles;
+t_board g_board;
+t_square g_current_square;
+t_square *g_obstacles;
 
 // EMPTY - OBSTACLE - FULL
 char first_line[4];

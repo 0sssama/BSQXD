@@ -1,16 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_get_obstacles.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 16:20:46 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/11 16:20:46 by olabrahm         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "global_vars.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -20,10 +7,12 @@ t_square *ft_get_obstacles(t_board board)
 	int			x;
 	int			y;
 	int			i;
+	int counter;
 
-	output = (t_square *) malloc(board.obs_count * sizeof(t_square) + 1);
+	counter = 0;
+	output = (t_square *) malloc((board.obs_count + 1) * sizeof(t_square));
 	i = 0;
-	y = 0;
+	y = 1;
 	while (y < board.y)
 	{
 		x = 0;
@@ -35,6 +24,10 @@ t_square *ft_get_obstacles(t_board board)
 				output[i].y = y;
 				output[i].l = 1;
 				i++;
+				counter++;
+
+				if(counter == board.obs_count)
+					return output;
 			}
 			x++;
 		}

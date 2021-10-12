@@ -1,33 +1,39 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_obstacles.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/12 14:38:28 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/12 14:38:28 by olabrahm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_square *ft_get_obstacles(t_board board)
+#include <stdlib.h>
+#include "functions.h"
+#include "global_vars.h"
+
+t_square	*ft_get_obstacles(void)
 {
 	t_square	*output;
 	int			x;
 	int			y;
 	int			i;
-	int counter;
 
-	counter = 0;
-	output = (t_square *) malloc((board.obs_count + 1) * sizeof(t_square));
+	output = (t_square *) malloc((g_board.obs_count + 1) * sizeof(t_square));
 	i = 0;
 	y = 1;
-	while (y < board.y)
+	while (y < g_board.y)
 	{
 		x = 0;
-		while (x < board.x)
+		while (x < g_board.x)
 		{
-			if (board.bd[y][x] == first_line[1])
+			if (g_board.bd[y][x] == first_line[1])
 			{
 				output[i].x = x;
 				output[i].y = y;
-				output[i].l = 1;
-				i++;
-				counter++;
-
-				if(counter == board.obs_count)
-					return output;
+				output[i++].l = 1;
 			}
 			x++;
 		}

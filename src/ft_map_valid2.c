@@ -1,33 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_map_valid2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 16:41:02 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/12 17:30:03 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/12 17:43:59 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
 
-void	ft_highlight_biggest_square(void)
+void	ft_extract(char *str)
+{
+	int	len;
+	int	i;
+	int	count;
+
+	count = 0;
+	len = ft_strlen(str);
+	if (len < 4)
+		return ;
+	i = len - 1;
+	while (count < 3)
+		first_line[count++] = str[i--];
+	g_y = ft_atoi(str, i);
+}
+
+int	ft_length(char **map)
 {
 	int	i;
-	int	j;
 
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
+	g_x = ft_strlen(map[1]);
+	i = 1;
+	while (i < g_y)
 	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = first_line[2];
-			j++;
-		}
+		if (ft_strlen(map[i]) != g_x)
+			return (0);
 		i++;
 	}
+	return (1);
+}
+
+int	ft_break(char **map)
+{
+	int	i;
+
+	i = 1;
+	while (map[i])
+		i++;
+	if (i - 1 != g_y)
+		return (0);
+	return (1);
 }

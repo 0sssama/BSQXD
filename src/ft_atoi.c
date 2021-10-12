@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 16:41:02 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/12 14:43:07 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/12 14:53:20 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "functions.h"
-#include "global_vars.h"
-
-void	ft_highlight_biggest_square(void)
+int	num(char c)
 {
-	int	i;
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(char *str, int i)
+{
+	int	res;
 	int	j;
 
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
+	j = 0;
+	res = 0;
+	while (num(str[j]) && str[j] && j <= i)
 	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = first_line[2];
-			j++;
-		}
-		i++;
+		res *= 10;
+		res += (int)str[j] - 48;
+		j++;
 	}
+	return (res);
 }

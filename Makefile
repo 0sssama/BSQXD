@@ -5,12 +5,15 @@ SRCS=$(wildcard src/*.c)
 OBJS=$(SRCS:.c=.o)
 BIN=bsq
 
+.PHONY: all clean fclean
+
 all: $(BIN)
 
 $(BIN): $(OBJS)
-    $(CC) -I $(INCLUDES) $(FLAGS) $(OBJS) -o $(BIN)
+	$(CC) -I $(INCLUDES) $(FLAGS) $(OBJS) main.c -o $(BIN)
+
 %.o: %.c 
-    $(CC) $(FLAGS) -c $< -o $@
+	$(CC) -I $(INCLUDES) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
@@ -18,4 +21,3 @@ clean:
 fclean: clean
 	rm -f $(BIN)
 
-.PHONY: all clean fclean

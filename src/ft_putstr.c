@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 16:41:02 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/12 18:24:42 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/12 18:25:16 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
 
-void	ft_highlight_biggest_square(void)
+void	ft_putstr(char *str)
 {
-	int	i;
-	int	j;
-
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
-	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = first_line[2];
-			j++;
-		}
-		i++;
-	}
+	while (*str)
+		write(1, str++, 1);
 }

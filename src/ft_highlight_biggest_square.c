@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 20:51:11 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 21:27:35 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_highlight_biggest_square(void)
 
 	i = g_current_square.y;
 	j = g_current_square.x;
-	printf("i = %d, j = %d, l = %d\n", i, j, g_current_square.l);
 	while (i < g_current_square.l + g_current_square.y)
 	{
 		j = g_current_square.x;

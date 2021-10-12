@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:55:36 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 21:19:31 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 21:28:31 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ void	ft_init_g_values(char **map)
 	g_board.x = g_x;
 	g_board.y = g_y;
 	g_board.obs_count = ft_obs_count();
-	//printf(">>>>>%s\n", map[1]);
 	g_obstacles = ft_get_obstacles();
-	printf(">>>>>obs count %d\n", g_board.obs_count);
 }
 
 int	main(int ac, char **av)
@@ -55,12 +53,10 @@ int	main(int ac, char **av)
 			if (g_y != 0 && ft_map_valid(map))
 			{
 				ft_init_g_values(map);
-				ft_show_board();
-				if (!ft_core())
+				if (ft_core())
 				{
 					ft_highlight_biggest_square();
 					ft_show_board();
-					ft_putchar('\n');
 				}
 				else
 				{
@@ -70,6 +66,7 @@ int	main(int ac, char **av)
 			}
 			else
 				ft_putstr("map error.\n");
+			i++;
 		}
 	}
 	else

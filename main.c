@@ -6,49 +6,83 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:55:36 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 18:41:40 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 21:19:31 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-
+#include <stdio.h>
 
 void	ft_reset_g_values(void)
 {
-	g_size = 30000;
 	if (g_obstacles)
 		free(g_obstacles);
-	g_obstacles = ft_get_obstacles();
+	if (g_board.bd)
+		free(g_board.bd);
+}
+
+void	ft_init_g_values(char **map)
+{
+	g_board.bd = map;
 	g_board.x = g_x;
 	g_board.y = g_y;
 	g_board.obs_count = ft_obs_count();
+	//printf(">>>>>%s\n", map[1]);
+	g_obstacles = ft_get_obstacles();
+	printf(">>>>>obs count %d\n", g_board.obs_count);
 }
 
 int	main(int ac, char **av)
 {
 	char	**map;
+	int		i;
 
+	i = 1;
 	if (ac > 1)
 	{
-		map = read_input(av[1]);
-		if (ft_map_valid(map))
+		while (i < ac)
 		{
-			ft_reset_g_values();
-			ft_putstr("map valid.");
+			g_size = 30000;
+			//ft_reset_g_values();
+			map = read_input(av[1]);
+			if (!map)
+			{
+				ft_putstr("map error.\n");
+				return (0);
+			}
+			ft_extract(map[0]);
+			if (g_y != 0 && ft_map_valid(map))
+			{
+				ft_init_g_values(map);
+				ft_show_board();
+				if (!ft_core())
+				{
+					ft_highlight_biggest_square();
+					ft_show_board();
+					ft_putchar('\n');
+				}
+				else
+				{
+					ft_putstr("no valid square :( try another map!\n");
+					return (0);
+				}
+			}
+			else
+				ft_putstr("map error.\n");
 		}
-		else
-			ft_putstr("map error.");
-		return (0);
 	}
 	else
 	{
-		ft_putstr("No input.\n");
+		ft_putstr("No input. Feature not yet added XD\n");
 		// standard input
 	}
 	return (0);
 }
-// get input
-// map valid
-// core
-// highlight square
+
+/*
+ * > get input			[X]
+ * > map valid			[X]
+ * > core				[ ]
+ * > highlight square	[ ]
+ */

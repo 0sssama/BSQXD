@@ -6,12 +6,13 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:30:03 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 17:43:59 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 19:18:57 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
+#include <stdio.h>
 
 void	ft_extract(char *str)
 {
@@ -19,13 +20,13 @@ void	ft_extract(char *str)
 	int	i;
 	int	count;
 
-	count = 0;
+	count = 2;
 	len = ft_strlen(str);
 	if (len < 4)
 		return ;
 	i = len - 1;
-	while (count < 3)
-		first_line[count++] = str[i--];
+	while (count >= 0)
+		first_line[count--] = str[i--];
 	g_y = ft_atoi(str, i);
 }
 

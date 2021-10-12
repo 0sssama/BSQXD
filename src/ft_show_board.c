@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_show_board.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 20:51:11 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/12 20:40:34 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/12 21:07:28 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 #include "global_vars.h"
 #include <stdio.h>
 
-void	ft_highlight_biggest_square(void)
+void	ft_show_board(void)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
-	i = g_current_square.y;
-	j = g_current_square.x;
-	printf("i = %d, j = %d, l = %d\n", i, j, g_current_square.l);
-	while (i < g_current_square.l + g_current_square.y)
+	i = 1;
+	j = 0;
+	while(i < g_board.y)
 	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = first_line[2];
-			j++;
-		}
+		j = 0;
+		while(j < g_board.x)
+			ft_putchar(g_board.bd[i][j++]);
+		ft_putchar('\n');
 		i++;
 	}
 }

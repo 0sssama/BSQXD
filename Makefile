@@ -21,3 +21,4 @@ clean:
 fclean: clean
 	rm -f $(BIN)
 
+re: fclean all

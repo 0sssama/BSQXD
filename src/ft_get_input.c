@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:56:55 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 18:26:14 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/12 19:15:16 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,8 @@ char	**read_input(char *input)
 	buff = (char *)malloc(g_size * sizeof(char));
 	if (buff == 0)
 		return (0);
-	ret = read(fd, buff, g_size);
-	while (ret)
-	{
+	while ((ret = read(fd, buff, g_size)))
 		read_size += ret;
-		ret = read(fd, buff, g_size);
-	}
 	close(fd);
 	fd = open(input, O_RDWR);
 	buff = (char *)malloc((read_size + 1) * sizeof(char));
@@ -50,5 +46,6 @@ char	**read_input(char *input)
 		return (0);
 	read(fd, buff, read_size);
 	map = ft_split(buff, "\n");
+	free(buff);
 	return (map);
 }

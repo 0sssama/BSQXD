@@ -14,26 +14,35 @@
 #include "functions.h"
 #include "global_vars.h"
 
-t_square	*ft_get_obstacles(void)
+t_square	*ft_get_obstacles(t_board board)
 {
 	t_square	*output;
 	int			x;
 	int			y;
 	int			i;
+    int 		counter;
 
-	output = (t_square *) malloc((g_board.obs_count + 1) * sizeof(t_square));
+    counter = 0;
+	output = (t_square *) malloc((board.obs_count + 1) * sizeof(t_square));
 	i = 0;
 	y = 1;
-	while (y < g_board.y)
+	while (y < board.y)
 	{
 		x = 0;
-		while (x < g_board.x)
+		while (x < board.x)
 		{
-			if (g_board.bd[y][x] == first_line[1])
+			if (board.bd[y][x] == first_line[1])
 			{
 				output[i].x = x;
 				output[i].y = y;
-				output[i++].l = 1;
+				output[i].l = 1;
+				i++;
+                counter++;
+                if (counter == board.obs_count)
+				{
+					output[i].l = 0;
+                    return (output);
+				}
 			}
 			x++;
 		}

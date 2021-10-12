@@ -13,9 +13,9 @@ $(BIN): $(OBJS)
     $(CC) $(FLAGS) -c $< -o $@
 
 clean:
-    rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-    rm -f $(BIN)
+	rm -f $(BIN)
 
 .PHONY: all clean fclean

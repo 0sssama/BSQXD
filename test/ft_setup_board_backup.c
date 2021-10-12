@@ -37,7 +37,7 @@ t_square *ft_get_obstacles(t_board board)
     counter = 0;
 	output = (t_square *) malloc((board.obs_count + 1) * sizeof(t_square));
 	i = 0;
-	y = 1;
+	y = 0;
 	while (y < board.y)
 	{
 		x = 0;
@@ -85,10 +85,9 @@ int min(int a, int b) {
 int core(void) {
     g_current_square.l = min(g_x, g_y);
     g_current_square.x = 0;
-    g_current_square.y = 1;
+    g_current_square.y = 0;
 
     while(g_current_square.l > 0) {
-		printf("Checking squares of L = %d\n", g_current_square.l);
         while(g_current_square.y + g_current_square.l <= g_y)
         {
             g_current_square.x = 0;
@@ -104,80 +103,32 @@ int core(void) {
         }
         (g_current_square.l)--;
         (g_current_square.x) = 0;
-        (g_current_square.y) = 1;
+        (g_current_square.y) = 0;
     }
 
 	return 1;
 }
 
+# define SIZE 29000
 
 char	**stdin_to_stdout(void)
 {
-	char *buff;
-	char *temp;
+	char buff[SIZE];
 	char **map;
-	int ret;
-	int size;
 
-	size = 30000;
-	buff = (char *)malloc(size * sizeof(char));
-	if (buff == 0)
-		return 0;
-	while((ret = read(STDIN_FILENO, buff, size)))
-	{
-		if (ret == size) {
-			size *= 2;
-		 	temp = (char*)malloc(size * sizeof(char));
-			if (temp == 0)
-			{
-				printf("malloc error!\n");
-				return 0;
-			}
-			memset(temp, 0, size);
-			strcpy(temp, buff);
-			free(buff);
-			buff = temp + size/2;
-		}
-	}
-	
-	printf("HERE\n");
-
+	read(STDIN_FILENO, buff, SIZE);
 	map = ft_split(buff, "\n");
 	return (map);
 }
 
 char **read_input(char *input)
 {
-	int	fd;
-	char *buff;
+	char buff[SIZE];
 	char **map;
-	int ret;
-	int size;
-	int	red_size;
+	int	fd;
 
 	fd = open(input, O_RDWR);
-	size = 30000;
-	buff = (char *)malloc(size * sizeof(char));
-	if (buff == 0)
-		return 0;
-	while((ret = read(fd, buff, size))) {
-		red_size += ret;
-		printf("LOOP, size of ret = %d\n", red_size);
-	}
-	
-	close(fd);
-	fd = open(input, O_RDWR);
-	printf("MAX SIZE = %d\n", ret);
-
-	buff = (char *)malloc((red_size+1) * sizeof(char));
-	if (!buff)
-	{
-		printf("WTTF malloc error\n");
-		return 0;
-	}
-	read(fd, buff, red_size);
-	
-	printf("LOOP finished\n");
+	read(fd, buff, SIZE);
 	map = ft_split(buff, "\n");
 	return (map);
 }
@@ -209,7 +160,7 @@ void show_board(void)
 	int i;
 	int j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 
 	while(i < g_board.y) {
@@ -227,8 +178,8 @@ int main(int ac, char *av[]) {
     int i = 0;
     int j = 0;
     int k = 0;
-	g_x = atoi(av[2]);
-	g_y = atoi(av[3]) + 1;	
+	g_x = 20;
+	g_y = 10;	
 	
 	if (ac == 1)
 		g_board.bd = stdin_to_stdout();

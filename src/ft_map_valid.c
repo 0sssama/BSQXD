@@ -51,7 +51,7 @@ int	ft_onlychar(char **map)
 		j = 0;
 		while (j < size)
 		{
-			if (!(ft_char_exists(map[i][j], first_line)))
+			if (!(ft_char_exists(map[i][j], g_chars)))
 				return (0);
 			j++;
 		}
@@ -62,6 +62,6 @@ int	ft_onlychar(char **map)
 
 int	ft_map_valid(char **map)
 {
-	return (ft_charset(first_line) && ft_break(map)
+	return (ft_charset(g_chars) && ft_break(map)
 		&& ft_length(map) && (map[1][0] != '\0') && ft_onlychar(map));
 }

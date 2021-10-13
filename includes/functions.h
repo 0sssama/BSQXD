@@ -13,22 +13,20 @@
 #ifndef FUNCTIONS_H
 # define FUNCTIONS_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include "global_vars.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include "global_vars.h"
 
-
-t_square 	*ft_get_obstacles();
+t_square	*ft_get_obstacles(void);
 void		ft_highlight_biggest_square(void);
 char		**ft_split(char *str, char *charset);
 char		*ft_strcpy(char *dest, char *src);
-void		ft_highlight_biggest_square(void);
 int			ft_core(void);
-int			ft_obs_count();
+int			ft_obs_count(void);
 int			ft_square_valid(t_square square);
 int			ft_atoi(char *str, int i);
-int 		ft_min(int a, int b);
+int			ft_min(int a, int b);
 int			ft_strlen(char *str);
 int			ft_map_valid(char **map);
 int			ft_break(char **map);

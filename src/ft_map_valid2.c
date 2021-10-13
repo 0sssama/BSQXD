@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:30:03 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 19:18:57 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 10:55:41 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_extract(char *str)
 		return ;
 	i = len - 1;
 	while (count >= 0)
-		first_line[count--] = str[i--];
+		g_chars[count--] = str[i--];
 	g_y = ft_atoi(str, i);
 }
 

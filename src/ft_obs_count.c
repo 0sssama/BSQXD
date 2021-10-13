@@ -21,12 +21,12 @@ int	ft_obs_count(void)
 
 	y = 0;
 	count = 0;
-	while (y < g_board.y)
+	while (y <= g_board.y)
 	{
 		x = 0;
 		while (x < g_board.x)
 		{
-			if (g_board.bd[y][x] == first_line[1])
+			if (g_board.bd[y][x] == g_chars[1])
 				count++;
 			x++;
 		}

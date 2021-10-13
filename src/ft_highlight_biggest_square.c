@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 21:27:35 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 10:54:54 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_highlight_biggest_square(void)
 		j = g_current_square.x;
 		while (j < g_current_square.l + g_current_square.x)
 		{
-			g_board.bd[i][j] = first_line[2];
+			g_board.bd[i][j] = g_chars[2];
 			j++;
 		}
 		i++;

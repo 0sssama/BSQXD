@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:56:55 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 15:21:58 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 21:21:49 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	**stdin_to_stdout(void)
 	if (buff == 0)
 		return (0);
 	c = 't';
-	while (c != 0 && i <= 1001050)
+	while (c != 0 || i <= 1001050)
 	{
 		read(STDIN_FILENO, &c, 1);
 		buff[i++] = c;

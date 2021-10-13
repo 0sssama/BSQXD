@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:56:55 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 19:15:16 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 10:22:13 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,25 @@ char	**stdin_to_stdout(void)
 {
 	char	*buff;
 	char	**map;
-	int		ret;
-
+	//int		ret;
+	char c;
+	int i;
+	
+	i = 0;
 	buff = (char *)malloc(1000001 * sizeof(char));
     if (buff == 0)
-    {
         return 0;
-    }
-	ret = read(STDIN_FILENO, buff, 1000000);
-    if (ret < 0)
-        return 0;
-    buff[ret] = '\0';
+	c = 't';
+	while (c != EOF && i < 1000000)
+	{
+		read(STDIN_FILENO, &c, 1);
+		buff[i++] = c;
+	}
+    //if (ret < 0)
+    //    return 0;
+    buff[i] = '\0';
 	map = ft_split(buff, "\n");
+	free(buff);
 	return (map);
 }
 
@@ -73,7 +80,8 @@ char	**read_input(char *input)
 	buff = (char *)malloc((read_size + 1) * sizeof(char));
 	if (!buff)
 		return (0);
-	read(fd, buff, read_size);
+	ret = read(fd, buff, read_size);
+	buff[ret] = 0;
 	map = ft_split(buff, "\n");
 	free(buff);
 	return (map);

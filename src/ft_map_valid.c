@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:09:33 by fathjami          #+#    #+#             */
-/*   Updated: 2021/10/12 16:47:49 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 10:30:57 by fathjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_onlychar(char **map)
 
 	i = 1;
 	size = ft_strlen(map[1]);
-	while (i < g_y)
+	while (i <= g_y)
 	{
 		j = 0;
 		while (j < size)

@@ -6,13 +6,12 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:23:38 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 18:00:24 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-#include <stdio.h>
 
 void	ft_highlight_biggest_square(void)
 {

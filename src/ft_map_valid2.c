@@ -6,13 +6,12 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:30:03 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 10:55:41 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 18:00:30 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-#include <stdio.h>
 
 void	ft_extract(char *str)
 {

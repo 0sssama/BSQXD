@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "functions.h"
+#include "global_vars.h"
 
 int	g_len;
 

@@ -13,7 +13,7 @@ $(BIN): $(OBJS)
 	$(CC) -I $(INCLUDES) $(FLAGS) $(OBJS) -o $(BIN)
 
 %.o: %.c 
-	$(CC) -I $(INCLUDES) $(FLAGS) -c $< -o $@
+	$(CC) -I $(INCLUDES) $(FLAGS) -c $? -o $@
 
 clean:
 	rm -f $(OBJS)

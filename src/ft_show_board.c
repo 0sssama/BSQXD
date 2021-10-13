@@ -6,13 +6,12 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 20:40:34 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 10:45:47 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 18:00:39 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-#include <stdio.h>
 
 void	ft_show_board(void)
 {

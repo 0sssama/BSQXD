@@ -6,13 +6,12 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:16:11 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 15:11:46 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 17:59:11 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-#include <stdio.h>
 
 void	ft_bsq(char **map)
 {

@@ -18,7 +18,7 @@ int	ft_square_valid(t_square square)
 	int			i;
 
 	i = 0;
-	while (g_obstacles[i].l != 0)
+	while (i < g_board.obs_count)
 	{
 		if ((g_obstacles[i].x >= square.x
 				&& g_obstacles[i].x <= square.x + square.l - 1)

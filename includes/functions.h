@@ -40,5 +40,10 @@ char		**stdin_to_stdout(void);
 char		**read_input(char *input);
 void		ft_putchar(char c);
 void		ft_show_board(void);
+void		ft_reset_g_values(void);
+void		ft_init_g_values(char **map);
+void		ft_bsq(char **map);
+void		ft_handle_stdin(void);
+void		ft_handle_file(char *file_name);
 
 #endif

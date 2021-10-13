@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_bsq.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:23:38 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/13 12:16:11 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/13 12:32:32 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 #include "global_vars.h"
 #include <stdio.h>
 
-void	ft_highlight_biggest_square(void)
+void	ft_bsq(char **map)
 {
-	int	i;
-	int	j;
-
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
+	ft_extract(map[0]);
+	if (g_y != 0 && ft_map_valid(map))
 	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
+		ft_init_g_values(map);
+		if (ft_core())
 		{
-			g_board.bd[i][j] = g_chars[2];
-			j++;
+			ft_highlight_biggest_square();
+			ft_show_board();
 		}
-		i++;
+		else
+		{
+			ft_putstr("no valid square :( try another map!\n");
+			return ;
+		}
 	}
+	else
+		ft_putstr("map error\n");
 }

@@ -33,7 +33,7 @@ t_square	*ft_get_obstacles(void)
 
 	g_counter = 0;
 	g_obs_i = 0;
-	g_y = 1;
+	g_obs_y = 1;
 	output = (t_square *) malloc((g_board.obs_count + 1) * sizeof(t_square));
 	while (g_obs_y <= g_board.y)
 	{
@@ -44,15 +44,11 @@ t_square	*ft_get_obstacles(void)
 			{
 				ft_fill_output(output);
 				if (g_counter == g_board.obs_count)
-				{
-					output[g_obs_i].l = 0;
 					return (output);
-				}
 			}
 			g_obs_x++;
 		}
 		g_obs_y++;
 	}
-	output[g_obs_i].l = 0;
 	return (output);
 }

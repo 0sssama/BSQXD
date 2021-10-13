@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_handle_file.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:23:38 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/13 12:13:08 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/13 12:37:05 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-#include <stdio.h>
 
-void	ft_highlight_biggest_square(void)
+void	ft_handle_file(char *file_name)
 {
-	int	i;
-	int	j;
+	char	**map;
 
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
+	g_size = 30000;
+	map = read_input(file_name);
+	if (!map)
 	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = g_chars[2];
-			j++;
-		}
-		i++;
+		ft_putstr("map error\n");
+		return ;
 	}
+	ft_bsq(map);
+	ft_reset_g_values();
 }

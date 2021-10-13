@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_global_vars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:23:38 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/13 12:14:39 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/13 12:35:31 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 #include "global_vars.h"
 #include <stdio.h>
 
-void	ft_highlight_biggest_square(void)
+void	ft_reset_g_values(void)
 {
-	int	i;
-	int	j;
+	if (g_obstacles)
+		free(g_obstacles);
+	if (g_board.bd)
+		free(g_board.bd);
+}
 
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
-	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = g_chars[2];
-			j++;
-		}
-		i++;
-	}
+void	ft_init_g_values(char **map)
+{
+	g_board.bd = map;
+	g_board.x = g_x;
+	g_board.y = g_y;
+	g_board.obs_count = ft_obs_count();
+	g_obstacles = ft_get_obstacles();
 }

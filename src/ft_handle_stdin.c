@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_highlight_biggest_square.c                      :+:      :+:    :+:   */
+/*   ft_handle_stdin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 14:54:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:23:38 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/13 12:18:25 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/13 12:36:25 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 #include "global_vars.h"
-#include <stdio.h>
 
-void	ft_highlight_biggest_square(void)
+void	ft_handle_stdin(void)
 {
-	int	i;
-	int	j;
+	char	**map;
 
-	i = g_current_square.y;
-	j = g_current_square.x;
-	while (i < g_current_square.l + g_current_square.y)
+	g_size = 30000;
+	map = stdin_to_stdout();
+	if (!map)
 	{
-		j = g_current_square.x;
-		while (j < g_current_square.l + g_current_square.x)
-		{
-			g_board.bd[i][j] = g_chars[2];
-			j++;
-		}
-		i++;
+		ft_putstr("map error\n");
+		return ;
 	}
+	ft_bsq(map);
 }

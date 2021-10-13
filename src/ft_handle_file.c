@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:13:08 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:37:05 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 15:08:13 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_handle_file(char *file_name)
 	map = read_input(file_name);
 	if (!map)
 	{
-		ft_putstr("map error\n");
+		ft_puterr("map error\n");
 		return ;
 	}
 	ft_bsq(map);

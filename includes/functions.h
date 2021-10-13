@@ -21,7 +21,6 @@
 t_square	*ft_get_obstacles(void);
 void		ft_highlight_biggest_square(void);
 char		**ft_split(char *str, char *charset);
-char		*ft_strcpy(char *dest, char *src);
 int			ft_core(void);
 int			ft_obs_count(void);
 int			ft_square_valid(t_square square);
@@ -35,7 +34,7 @@ void		ft_extract(char *str);
 int			ft_onlychar(char **map);
 int			ft_char_exists(char c, char *str);
 int			ft_charset(char *str);
-void		ft_putstr(char *str);
+void		ft_puterr(char *str);
 char		**stdin_to_stdout(void);
 char		**read_input(char *input);
 void		ft_putchar(char c);

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_puerr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 15:49:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/12 15:50:10 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/10/13 15:07:18 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/10/13 15:07:47 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
+#include "functions.h"
+#include "global_vars.h"
 
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+void	ft_puterr(char *str)
+{
+	while (*str)
+		write(2, str++, 1);
 }

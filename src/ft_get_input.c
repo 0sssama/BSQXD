@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:56:55 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 14:06:46 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 15:21:58 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,17 @@ char	**stdin_to_stdout(void)
 	return (map);
 }
 
+void	ft_fill_buffer(char *buff, int read_size, char *input)
+{
+	int	fd;
+	int	ret;
+
+	fd = open(input, O_RDWR);
+	buff = (char *)malloc((read_size + 1) * sizeof(char));
+	ret = read(fd, buff, read_size);
+	buff[ret] = 0;
+}
+
 char	**read_input(char *input)
 {
 	char	**map;
@@ -45,6 +56,8 @@ char	**read_input(char *input)
 	int		read_size;
 
 	fd = open(input, O_RDWR);
+	if (fd < 0)
+		return (0);
 	read_size = 0;
 	buff = (char *)malloc(g_size * sizeof(char));
 	ret = read(fd, buff, g_size);
@@ -56,10 +69,7 @@ char	**read_input(char *input)
 		ret = read(fd, buff, g_size);
 	}
 	close(fd);
-	fd = open(input, O_RDWR);
-	buff = (char *)malloc((read_size + 1) * sizeof(char));
-	ret = read(fd, buff, read_size);
-	buff[ret] = 0;
+	ft_fill_buffer(buff, read_size, input);
 	map = ft_split(buff, "\n");
 	free(buff);
 	return (map);

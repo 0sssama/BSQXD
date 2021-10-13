@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:16:11 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/10/13 12:32:32 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/10/13 15:11:46 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	ft_bsq(char **map)
 		}
 		else
 		{
-			ft_putstr("no valid square :( try another map!\n");
+			ft_puterr("no valid square :( try another map!\n");
 			return ;
 		}
 	}
 	else
-		ft_putstr("map error\n");
+		ft_puterr("map error\n");
 }

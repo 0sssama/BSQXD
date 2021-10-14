@@ -25,7 +25,7 @@ char	**stdin_to_stdout(void)
 	if (buff == 0)
 		return (0);
 	c = 't';
-	while (c != 0 || i <= 1001050)
+	while (c != 0 && i <= 1001050)
 	{
 		read(STDIN_FILENO, &c, 1);
 		buff[i++] = c;

@@ -1,7 +1,7 @@
 # BSQ - Piscine September 2021
 
 CONTRIBUTORS:
-	- Maher Azzouzi
-	- Oussama Labrahmi
-	- Fathiyat Olatokunbo Jamia
-	- Achraf El Khnissi
+1. Maher Azzouzi
+2. Oussama Labrahmi
+3. Fathiyat Olatokunbo Jamia
+4. Achraf El Khnissi
